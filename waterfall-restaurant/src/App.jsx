@@ -11,7 +11,6 @@ import Hero          from '@components/sections/Hero'
 import About         from '@components/sections/About'
 import Specialty     from '@components/sections/Specialty'
 import Menu          from '@components/sections/Menu'
-import Gallery       from '@components/sections/Gallery'
 import Events        from '@components/sections/Events'
 import Reviews       from '@components/sections/Reviews'
 import VisitUs       from '@components/sections/VisitUs'
@@ -104,7 +103,6 @@ export default function App() {
         <About />
         <Specialty />
         <Menu />
-        <Gallery />
         <Events />
         <Reviews />
         <VisitUs />

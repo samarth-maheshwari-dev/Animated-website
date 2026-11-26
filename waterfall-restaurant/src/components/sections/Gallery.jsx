@@ -1,37 +1,45 @@
 import React from 'react'
 import { ZoomParallax } from '@components/ui/zoom-parallax'
 import { cn } from '@/lib/utils'
+import heroNight from '@assets/images/ambiance/hero-night-waterfall.png'
+import aboutDay from '@assets/images/ambiance/about-day-waterfall.png'
+import midnightBBQ from '@assets/images/ambiance/Midnight BBQ.png'
+import waterfallMist from '@assets/images/ambiance/Waterfall mist.png'
+import forestPlatter from '@assets/images/ambiance/FOREST PLATTER.png'
+import birthdayEvent from '@assets/images/ambiance/birthday-event.png'
+import corporateDinners from '@assets/images/ambiance/corporate-dinners.png'
 
+// Gallery images — real waterfall restaurant ambiance & signature experience photos
 export default function Gallery() {
 
   const images = [
     {
-      src: '/sizzler-noodles.png',
-      alt: 'Veg Sizzler Noodles',
+      src: heroNight,
+      alt: 'Night Lit Waterfall — The Waterfall Restaurant Indore',
     },
     {
-      src: '/brownie-sizzler.png',
-      alt: 'Sizzling Brownie Dessert',
+      src: aboutDay,
+      alt: 'Daytime Waterfall Seating',
     },
     {
-      src: '/paneer-masala.png',
-      alt: 'Paneer Masala Curry',
+      src: midnightBBQ,
+      alt: 'Midnight BBQ Live Table Grill',
     },
     {
-      src: 'https://images.unsplash.com/photo-1546069901-d5d28bbaea1e?w=1280&q=80',
-      alt: 'Fresh vegetable stir fry',
+      src: waterfallMist,
+      alt: 'Waterfall Mist Dining Experience',
     },
     {
-      src: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1280&q=80',
-      alt: 'Healthy vegetarian salad bowl',
+      src: forestPlatter,
+      alt: 'Forest Platter Signature Dish',
     },
     {
-      src: 'https://images.unsplash.com/photo-1626804475297-41609eaaf80e?w=1280&q=80',
-      alt: 'Golden crispy corn snack',
+      src: birthdayEvent,
+      alt: 'Birthday & Anniversary Cabana Setup',
     },
     {
-      src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1280&q=80',
-      alt: 'Fine restaurant dining setting',
+      src: corporateDinners,
+      alt: 'Corporate Dinner & Group Seating',
     },
   ];
 
@@ -48,10 +56,13 @@ export default function Gallery() {
           )}
         />
         <div className="text-center z-10 px-4">
-          <p className="font-body text-primary text-xs tracking-widest uppercase mb-4">Our Ambiance</p>
+          <p className="font-body text-primary text-xs tracking-widest uppercase mb-4">Our Ambiance & Food</p>
           <h2 className="font-display text-white text-3xl md:text-5xl font-bold">
             Immerse In The <span className="text-primary italic">Experience</span>
           </h2>
+          <p className="text-stone-500 mt-4 max-w-xl mx-auto text-sm md:text-base">
+            From the cascading waterfall to the sizzling iron plates — every moment is a memory.
+          </p>
         </div>
       </div>
       

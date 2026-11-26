@@ -123,6 +123,19 @@
   background: #F9E79F;
 }
 
+/* WhatsApp Button Pulse Glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5), 0 4px 20px rgba(0,0,0,0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0), 0 4px 20px rgba(0,0,0,0.3);
+  }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
 /* GPU Acceleration for Smooth Animations */
 .gpu-accelerated {
   backface-visibility: hidden;

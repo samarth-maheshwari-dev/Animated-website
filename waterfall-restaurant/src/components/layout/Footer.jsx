@@ -5,7 +5,6 @@ const QUICK_LINKS = [
   { name: 'Home',    href: '#home'    },
   { name: 'About',   href: '#about'   },
   { name: 'Menu',    href: '#menu'    },
-  { name: 'Gallery', href: '#gallery' },
   { name: 'Events',  href: '#events'  },
   { name: 'Contact', href: '#visit'   },
 ]

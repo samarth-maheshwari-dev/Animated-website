@@ -6,13 +6,13 @@ export default function EventCard({ event }) {
   const bgImage = event.image || (event.id === 3 ? aboutDay : null)
   
   return (
-    <div className="relative group overflow-hidden rounded-2xl min-h-[420px] border border-primary/10 hover:border-primary/40 transition-all duration-400 ease-out cursor-default shadow-lg">
+    <div className="relative group overflow-hidden rounded-2xl min-h-[440px] border border-primary/15 hover:border-primary/50 transition-all duration-500 ease-out cursor-default shadow-premium">
       {/* Background Layer */}
       {bgImage ? (
         <img 
           src={bgImage} 
           alt={event.title} 
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 mix-blend-luminosity group-hover:opacity-80"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-75 group-hover:opacity-90"
           loading="lazy"
           decoding="async"
           width={600}
@@ -23,20 +23,17 @@ export default function EventCard({ event }) {
       )}
 
       {/* Dark Overlay with Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent z-10 opacity-90 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/75 to-background-dark/20 z-10 transition-opacity duration-500" />
 
       {/* Content Block */}
-      <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end transform group-hover:-translate-y-2 transition-transform duration-500 will-change-transform">
-        <span className="text-4xl mb-4 block transform group-hover:scale-110 transition-transform duration-300 origin-left" aria-hidden="true">
-          {event.emoji}
-        </span>
-        <h3 className="font-display text-white text-2xl font-bold mb-1">
+      <div className="absolute inset-0 z-20 p-7 sm:p-8 flex flex-col justify-end">
+        <h3 className="font-display text-white text-2xl font-bold mb-1.5">
           {event.title}
         </h3>
         <p className="font-accent italic text-primary text-lg mb-3">
           {event.subtitle}
         </p>
-        <p className="font-body text-stone-400 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+        <p className="font-body text-stone-300 text-sm leading-relaxed mb-6 line-clamp-3">
           {event.description}
         </p>
 
@@ -45,15 +42,15 @@ export default function EventCard({ event }) {
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(event.whatsappMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary w-full shadow-none transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+          className="btn-primary w-full shadow-none transition-all duration-300"
           aria-label={`Book ${event.title} via WhatsApp`}
         >
-          WhatsApp to Book
+          WhatsApp to Enquire
         </a>
       </div>
 
       {/* Gold Glow Hover */}
-      <div className="absolute inset-0 glow-gold opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none" />
+      <div className="absolute inset-0 glow-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </div>
   )
 }

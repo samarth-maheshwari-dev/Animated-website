@@ -3,53 +3,45 @@ import { cn } from "@/lib/utils"; // Your utility for merging class names
 import { ArrowRight } from "lucide-react";
 
 const DestinationCard = React.forwardRef(
-  ({ className, imageUrl, location, flag, stats, href, themeColor, ...props }, ref) => {
+  ({ className, imageUrl, location, flag, stats, href, ...props }, ref) => {
     return (
-      // The 'group' class enables hover effects on child elements
       <div
         ref={ref}
-        style={{
-          "--theme-color": themeColor,
-        }}
         className={cn("group w-full h-full", className)}
         {...props}
       >
         <a
           href={href}
-          className="relative block w-full h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-500 ease-in-out group-hover:scale-[1.02] group-hover:shadow-[0_0_60px_-15px_hsl(var(--theme-color)/0.6)]"
-          aria-label={`Explore details for ${location}`}
-          style={{
-             boxShadow: `0 0 40px -15px hsl(var(--theme-color) / 0.5)`
-          }}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block w-full h-full rounded-2xl overflow-hidden border border-white/10 hover:border-primary/40 transition-all duration-500 ease-out bg-stone-950"
+          aria-label={`Enquire about ${location}`}
         >
-          {/* Background Image with Parallax Zoom */}
+          {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110"
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
             style={{ backgroundImage: `url('${imageUrl}')` }}
           />
 
-          {/* Themed Gradient Overlay */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(to top, hsl(var(--theme-color) / 0.9), hsl(var(--theme-color) / 0.6) 30%, transparent 60%)`,
-            }}
-          />
-          
-          {/* Content */}
-          <div className="relative flex flex-col justify-end h-full p-6 text-white">
-            <h3 className="text-3xl font-bold font-serif tracking-tight">
-              {location} <span className="text-2xl ml-1">{flag}</span>
-            </h3>
-            <p className="text-sm text-white/80 mt-1 font-medium">{stats}</p>
+          {/* Clean Dark Editorial Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/15" />
 
-            {/* Explore Button */}
-            <div className="mt-8 flex items-center justify-between bg-[hsl(var(--theme-color)/0.2)] backdrop-blur-md border border-[hsl(var(--theme-color)/0.3)] 
-                           rounded-lg px-4 py-3 
-                           transition-all duration-300 
-                           group-hover:bg-[hsl(var(--theme-color)/0.4)] group-hover:border-[hsl(var(--theme-color)/0.5)]">
-              <span className="text-sm font-sans tracking-widest uppercase">Explore</span>
-              <ArrowRight className="h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+          {/* Content */}
+          <div className="relative flex flex-col justify-between h-full p-6 sm:p-7 text-white">
+            <span className="font-body text-xs tracking-[0.25em] text-primary/90 font-medium">
+              {flag}
+            </span>
+
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight">
+                {location}
+              </h3>
+              <p className="text-sm text-stone-300 mt-2 leading-relaxed">{stats}</p>
+
+              <div className="mt-6 flex items-center justify-between border-t border-white/15 pt-4 text-primary">
+                <span className="text-xs font-body tracking-[0.2em] uppercase font-semibold">Enquire on WhatsApp</span>
+                <ArrowRight className="h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
             </div>
           </div>
         </a>

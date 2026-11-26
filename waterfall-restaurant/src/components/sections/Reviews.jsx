@@ -3,40 +3,20 @@ import SectionLabel from '../ui/SectionLabel';
 import { CircularTestimonials } from '../ui/CircularTestimonials';
 import { reviewsData } from '../../data/reviewsData';
 import StarRating from '../ui/StarRating';
-import { SparklesCore } from '../ui/SparklesCore';
 
 const Reviews = () => {
   return (
-    <section id="reviews" className="py-24 bg-background-dark relative overflow-hidden">
-      {/* Sparkles Background */}
-      <div className="absolute inset-0 z-0">
-        <SparklesCore
-          id="reviews-sparkles"
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={300}
-          className="w-full h-full"
-          particleColor="#D4AF37"
-          speed={1.5}
-        />
-      </div>
-      
-      {/* Background Decorative Element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-10 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent" />
-      </div>
-
+    <section id="reviews" className="py-24 bg-background-dark relative overflow-hidden border-t border-white/10">
       <div className="container px-6 mx-auto relative z-10">
-        <div className="flex flex-col items-center mb-12 sm:mb-20 text-center">
-          <SectionLabel>Client Voices</SectionLabel>
+        <div className="flex flex-col items-center mb-12 sm:mb-16 text-center">
+          <SectionLabel>Guest Reviews</SectionLabel>
           <div className="flex flex-col items-center mt-2 sm:mt-4">
             <span className="text-6xl sm:text-7xl md:text-8xl font-serif text-primary leading-none">4.8</span>
             <div className="mt-2 sm:mt-4 scale-75 sm:scale-100">
               <StarRating rating={5} />
             </div>
-            <p className="text-stone-500 mt-4 uppercase tracking-widest text-[10px] sm:text-xs">
-              Based on <span className="text-white font-bold">10,742+</span> Verified Logs
+            <p className="text-stone-400 mt-4 uppercase tracking-widest text-[10px] sm:text-xs">
+              Based on <span className="text-white font-bold">10,742+</span> Google Reviews
             </p>
           </div>
         </div>
@@ -61,12 +41,12 @@ const Reviews = () => {
 
         <div className="mt-20 flex justify-center">
           <a
-            href="https://www.google.com/maps"
+            href="https://www.google.com/maps/place/The+Waterfall+Restaurant/@22.6105,75.811808,15z/data=!4m8!3m7!1s0x3962f96e1aaa360d:0xeaaa6810c9c77e38!8m2!3d22.6105!4d75.811808!9m1!1b1!16s%2Fg%2F11f5y45l56"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-full border border-primary/30 text-primary text-sm font-sans tracking-widest uppercase hover:bg-primary hover:text-black transition-all duration-500"
           >
-            Read More on Google
+            Read All Reviews on Google
           </a>
         </div>
       </div>
