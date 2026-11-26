@@ -1,5 +1,5 @@
 import { Instagram, MessageCircle } from 'lucide-react'
-import { WHATSAPP_BASE } from '@data/eventsData'
+import { WHATSAPP_BOOKING_URL, INSTAGRAM_URL } from '@data/eventsData'
 
 const QUICK_LINKS = [
   { name: 'Home',    href: '#home'    },
@@ -24,22 +24,22 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark hover:border-primary transition-all duration-500 shadow-lg shadow-primary/5"
               >
-                <Instagram size={24} />
+                <Instagram size={22} />
               </a>
               <a
-                href={WHATSAPP_BASE}
+                href={WHATSAPP_BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark hover:border-primary transition-all duration-500 shadow-lg shadow-primary/5"
               >
-                <MessageCircle size={24} />
+                <MessageCircle size={22} />
               </a>
             </div>
           </div>

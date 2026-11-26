@@ -1,5 +1,9 @@
 export const WHATSAPP_NUMBER = '917000359623'
 export const WHATSAPP_BASE   = `https://wa.me/${WHATSAPP_NUMBER}`
+export const WHATSAPP_BOOKING_URL = `${WHATSAPP_BASE}?text=${encodeURIComponent('Hi! I would like to reserve a table at The Waterfall Restaurant, Indore.')}`
+export const INSTAGRAM_URL   = 'https://www.instagram.com/the_waterfall_restaurant/'
+export const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/The+Waterfall+Restaurant+Indore/@22.6182403,75.8010383,17z/data=!3m1!4b1!4m6!3m5!1s0x3962f9072272d8c3:0x8f0eb02c506070a0!8m2!3d22.6182403!4d75.8010383!16s%2Fg%2F11j8wthl5y'
+export const GOOGLE_MAPS_EMBED_URL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.9527300376126!2d75.8010383!3d22.618240300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962f9072272d8c3%3A0x8f0eb02c506070a0!2sThe%20Waterfall%20Restaurant%20Indore!5e0!3m2!1sen!2sin!4v1795695374439!5m2!1sen!2sin'
 import corporateImg from '@assets/images/ambiance/evening-poolside-real.jpg'
 import birthdayImg from '@assets/images/ambiance/birthday-real.jpg'
 import poolsideImg from '@assets/images/ambiance/poolside-evening.jpg'

@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import heroVid from '@assets/videos/hero-background.mp4'
 import heroNight from '@assets/images/ambiance/hero-night-waterfall.png'
-import { WHATSAPP_BASE } from '@data/eventsData'
+import { WHATSAPP_BOOKING_URL } from '@data/eventsData'
 
 export default function Hero() {
   const sectionRef = useRef(null)
@@ -62,7 +62,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="font-body text-xs sm:text-sm uppercase tracking-[0.25em] text-primary/90 mb-6"
           >
-            Est. 2020 · Caps Town, Indore · 4.8★ on Google (10,742+ Reviews)
+            Est. 2020 · Near MITM / Medicaps, Indore · 4.8★ on Google (11,476+ Reviews)
           </motion.p>
 
           {/* Headline */}
@@ -87,7 +87,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.55, ease: 'easeOut' }}
             className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
           >
-            <a href={WHATSAPP_BASE} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
+            <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
               Reserve a Table
             </a>
             <a href="#menu" className="btn-outline w-full sm:w-auto">

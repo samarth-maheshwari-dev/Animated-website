@@ -3,6 +3,7 @@ import SectionLabel from '../ui/SectionLabel';
 import { CircularTestimonials } from '../ui/CircularTestimonials';
 import { reviewsData } from '../../data/reviewsData';
 import StarRating from '../ui/StarRating';
+import { GOOGLE_MAPS_URL } from '@data/eventsData';
 
 const Reviews = () => {
   return (
@@ -16,7 +17,7 @@ const Reviews = () => {
               <StarRating rating={5} />
             </div>
             <p className="text-stone-400 mt-4 uppercase tracking-widest text-[10px] sm:text-xs">
-              Based on <span className="text-white font-bold">10,742+</span> Google Reviews
+              Based on <span className="text-white font-bold">11,476+</span> Google Reviews
             </p>
           </div>
         </div>
@@ -41,7 +42,7 @@ const Reviews = () => {
 
         <div className="mt-20 flex justify-center">
           <a
-            href="https://www.google.com/maps/place/The+Waterfall+Restaurant/@22.6105,75.811808,15z/data=!4m8!3m7!1s0x3962f96e1aaa360d:0xeaaa6810c9c77e38!8m2!3d22.6105!4d75.811808!9m1!1b1!16s%2Fg%2F11f5y45l56"
+            href={GOOGLE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-full border border-primary/30 text-primary text-sm font-sans tracking-widest uppercase hover:bg-primary hover:text-black transition-all duration-500"
