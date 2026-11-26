@@ -47,12 +47,12 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden sm:flex items-center gap-4 md:gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {NAV_LINKS.map(link => (
             <a
               key={link.name}
               href={link.href}
-              className={`font-body text-[10px] md:text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-300 ${
+              className={`font-body text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-300 ${
                 isScrolled ? 'text-stone-300' : 'text-stone-200'
               }`}
             >
@@ -63,7 +63,7 @@ export default function Navbar() {
             href={WHATSAPP_BASE}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary scale-75 md:scale-90 py-2.5 shadow-none hover:shadow-primary/40 px-6"
+            className="btn-primary py-2.5 px-6 text-xs shadow-none hover:shadow-primary/40"
           >
             WhatsApp
           </a>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="sm:hidden p-2 text-primary hover:text-white transition-colors"
+          className="md:hidden p-2 text-primary hover:text-white transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
@@ -89,19 +89,19 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[90] sm:hidden bg-background-dark/98 backdrop-blur-xl flex flex-col pt-32 px-10"
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[90] md:hidden bg-background-dark/98 backdrop-blur-xl flex flex-col pt-24 pb-10 px-6 sm:px-10 overflow-y-auto"
           >
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
               {NAV_LINKS.map((link, i) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.05 }}
+                  transition={{ delay: 0.08 + i * 0.04 }}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-display text-4xl font-bold text-white hover:text-primary transition-colors flex items-center justify-between group"
+                  className="font-display text-3xl sm:text-4xl font-bold text-white hover:text-primary transition-colors flex items-center justify-between group"
                 >
                   <span>{link.name}</span>
                   <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">→</span>

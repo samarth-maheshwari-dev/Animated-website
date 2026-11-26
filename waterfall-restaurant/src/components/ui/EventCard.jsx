@@ -6,7 +6,7 @@ export default function EventCard({ event }) {
   const bgImage = event.image || (event.id === 3 ? aboutDay : null)
   
   return (
-    <div className="relative group overflow-hidden rounded-2xl min-h-[440px] border border-primary/15 hover:border-primary/50 transition-all duration-500 ease-out cursor-default shadow-premium">
+    <div className="relative group overflow-hidden rounded-2xl min-h-[380px] sm:min-h-[420px] lg:min-h-[440px] border border-primary/15 hover:border-primary/50 transition-all duration-500 ease-out cursor-default shadow-premium">
       {/* Background Layer */}
       {bgImage ? (
         <img 

@@ -50,6 +50,27 @@ export function CardStack({
     wrapIndex(initialIndex, len),
   );
   const [hovering, setHovering] = React.useState(false);
+  const [viewportWidth, setViewportWidth] = React.useState(() =>
+    typeof window !== "undefined" ? window.innerWidth : 1024,
+  );
+
+  React.useEffect(() => {
+    const onResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const isMobile = viewportWidth < 640;
+  const isTablet = viewportWidth >= 640 && viewportWidth < 1024;
+  const actualWidth = isMobile
+    ? Math.min(cardWidth, viewportWidth - 40)
+    : isTablet
+      ? Math.min(cardWidth, viewportWidth - 96)
+      : cardWidth;
+  const actualHeight = isMobile ? Math.round(cardHeight * 1.15) : cardHeight;
+  const effectiveSpacing = isMobile
+    ? Math.max(10, Math.round(actualWidth * (1 - overlap)))
+    : cardSpacing;
 
   React.useEffect(() => {
     setActive((a) => wrapIndex(a, len));
@@ -121,8 +142,8 @@ export function CardStack({
       onMouseLeave={() => setHovering(false)}
     >
       <div
-        className="relative w-full max-w-full overflow-hidden sm:overflow-visible pl-4 sm:pl-0 flex justify-center"
-        style={{ height: Math.max(380, cardHeight + 80) }}
+        className="relative w-full max-w-full overflow-hidden sm:overflow-visible flex justify-center"
+        style={{ height: Math.max(380, actualHeight + 80) }}
         tabIndex={0}
         onKeyDown={onKeyDown}
       >
@@ -150,7 +171,7 @@ export function CardStack({
               if (!visible) return null;
 
               const rotateZ = off * stepDeg;
-              const x = off * cardSpacing;
+              const x = off * effectiveSpacing;
               const y = abs * 10;
               const z = -abs * depthPx;
 
@@ -182,11 +203,6 @@ export function CardStack({
                     },
                   }
                 : {};
-
-              // Handle responsive width for mobile
-              const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-              const actualWidth = isMobile ? Math.min(cardWidth, window.innerWidth - 32) : cardWidth;
-              const actualHeight = isMobile ? cardHeight * 1.2 : cardHeight;
 
               return (
                 <motion.div
@@ -253,16 +269,16 @@ export function CardStack({
       </div>
 
       {showDots ? (
-        <div className="mt-8 flex items-center justify-center gap-2 sm:gap-4">
+        <div className="mt-6 sm:mt-8 flex items-center justify-center gap-2 sm:gap-4 px-2">
           <button
             onClick={prev}
-            className="p-2 rounded-full text-stone-400 hover:text-primary hover:bg-primary/10 transition"
+            className="p-2 rounded-full text-stone-400 hover:text-primary hover:bg-primary/10 transition shrink-0"
             aria-label="Previous card"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 max-w-[220px] sm:max-w-none">
             {items.map((it, idx) => {
               const on = idx === active;
               return (

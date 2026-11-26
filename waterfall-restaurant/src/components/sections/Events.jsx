@@ -24,10 +24,12 @@ export default function Events() {
         {/* 3-col Grid */}
         <div 
           ref={sectionRef} 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
-          {EVENTS.map(event => (
-            <EventCard key={event.id} event={event} />
+          {EVENTS.map((event, idx) => (
+            <div key={event.id} className={idx === 2 ? 'md:col-span-2 lg:col-span-1' : ''}>
+              <EventCard event={event} />
+            </div>
           ))}
         </div>
       </div>

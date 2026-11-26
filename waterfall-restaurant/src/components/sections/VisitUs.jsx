@@ -18,9 +18,9 @@ export default function VisitUs() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Map Embed Column */}
-          <div ref={mapRef} className="rounded-3xl overflow-hidden shadow-premium border border-primary/20 aspect-[4/3] relative scroll-reveal">
+          <div ref={mapRef} className="rounded-3xl overflow-hidden shadow-premium border border-primary/20 aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] relative scroll-reveal">
              <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14732.133742407545!2d75.811808!3d22.6105!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962f96e1aaa360d%3A0xeaaa6810c9c77e38!2sThe%20Waterfall%20Restaurant!5e0!3m2!1sen!2sin!4v1712836200000!5m2!1sen!2sin"
               width="100%"

@@ -33,7 +33,7 @@ export default function Hero() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative h-screen min-h-[600px] flex items-center overflow-hidden bg-background-dark"
+      className="relative min-h-[100svh] flex items-center overflow-hidden bg-background-dark py-24 sm:py-0"
     >
       {/* Background Video with Parallax */}
       <div ref={bgRef} className="absolute top-[-15%] left-0 w-full h-[130%] gpu-accelerated bg-[#0A0A0A]" style={{ willChange: 'transform' }}>
@@ -85,12 +85,12 @@ export default function Hero() {
             initial={{ y: 16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.55, ease: 'easeOut' }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
           >
-            <a href={WHATSAPP_BASE} target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a href={WHATSAPP_BASE} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
               Reserve a Table
             </a>
-            <a href="#menu" className="btn-outline">
+            <a href="#menu" className="btn-outline w-full sm:w-auto">
               Explore Menu
             </a>
           </motion.div>

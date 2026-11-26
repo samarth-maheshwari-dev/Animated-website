@@ -47,7 +47,7 @@ const Specialty = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
           {SPECIALTIES.map((item, idx) => (
             <motion.div
               key={idx}
@@ -55,7 +55,9 @@ const Specialty = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="w-full h-[400px] md:h-[440px]"
+              className={`w-full h-[360px] sm:h-[400px] md:h-[440px] ${
+                idx === 2 ? 'md:col-span-2 lg:col-span-1' : ''
+              }`}
             >
               <DestinationCard
                 imageUrl={item.image}
