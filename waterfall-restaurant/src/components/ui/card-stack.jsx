@@ -63,14 +63,11 @@ export function CardStack({
   const isMobile = viewportWidth < 640;
   const isTablet = viewportWidth >= 640 && viewportWidth < 1024;
   const actualWidth = isMobile
-    ? Math.min(cardWidth, viewportWidth - 40)
+    ? Math.min(cardWidth, viewportWidth - 48)
     : isTablet
       ? Math.min(cardWidth, viewportWidth - 96)
       : cardWidth;
   const actualHeight = isMobile ? Math.round(cardHeight * 1.15) : cardHeight;
-  const effectiveSpacing = isMobile
-    ? Math.max(10, Math.round(actualWidth * (1 - overlap)))
-    : cardSpacing;
 
   React.useEffect(() => {
     setActive((a) => wrapIndex(a, len));
@@ -82,7 +79,8 @@ export function CardStack({
   }, [active, len, onChangeIndex, items]);
 
   const maxOffset = Math.max(0, Math.floor(maxVisible / 2));
-  const cardSpacing = Math.max(10, Math.round(cardWidth * (1 - overlap)));
+  const cardSpacing = Math.max(10, Math.round(actualWidth * (1 - overlap)));
+  const effectiveSpacing = cardSpacing;
   const stepDeg = maxOffset > 0 ? spreadDeg / maxOffset : 0;
 
   const canGoPrev = loop || active > 0;
@@ -349,7 +347,7 @@ function DefaultFanCard({ item, active }) {
                {item.tag}
             </span>
         )}
-        <div className="truncate text-3xl font-serif text-white mb-2">
+        <div className="text-2xl sm:text-3xl font-serif text-white mb-2 leading-tight line-clamp-2">
           {item.title}
         </div>
         {item.description && (

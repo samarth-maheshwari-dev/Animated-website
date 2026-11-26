@@ -117,7 +117,7 @@ export default function Menu() {
   const sectionRef = useScrollReveal()
 
   return (
-    <section id="menu" ref={sectionRef} className="bg-background-dark py-24 relative z-10 scroll-reveal">
+    <section id="menu" ref={sectionRef} className="bg-background-dark py-24 relative z-10 overflow-hidden scroll-reveal">
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
           <SectionLabel>EXPLORE THE MENU</SectionLabel>

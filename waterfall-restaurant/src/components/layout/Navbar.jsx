@@ -33,7 +33,7 @@ export default function Navbar() {
           : 'bg-transparent py-6'
       }`}
     >
-      <div className="section-container flex items-center justify-between">
+      <div className="section-container flex items-center justify-between relative z-[110]">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2 group">
           <div className="w-10 h-10 bg-primary/90 rounded-lg flex items-center justify-center group-hover:bg-primary transition-colors shadow-lg shadow-primary/20">
