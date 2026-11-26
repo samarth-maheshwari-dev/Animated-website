@@ -1,5 +1,5 @@
 import { MapPin, Clock, Phone, Navigation, Instagram, ExternalLink } from 'lucide-react'
-import { WHATSAPP_BOOKING_URL, INSTAGRAM_URL, GOOGLE_MAPS_URL, GOOGLE_MAPS_EMBED_URL } from '@data/eventsData'
+import { WHATSAPP_BOOKING_URL, INSTAGRAM_URL, GOOGLE_MAPS_URL, GOOGLE_DIRECTIONS_URL, GOOGLE_MAPS_EMBED_URL } from '@data/eventsData'
 import SectionLabel from '@components/ui/SectionLabel'
 import { useScrollReveal } from '@hooks/useScrollReveal'
 
@@ -113,7 +113,7 @@ export default function VisitUs() {
               {/* Directions Button */}
               <div className="mt-6">
                 <a 
-                  href={GOOGLE_MAPS_URL} 
+                  href={GOOGLE_DIRECTIONS_URL} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-primary w-full flex items-center justify-center gap-3 group py-4 h-auto shadow-lg shadow-primary/10"

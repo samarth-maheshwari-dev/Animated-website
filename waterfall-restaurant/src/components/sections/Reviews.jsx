@@ -3,7 +3,7 @@ import SectionLabel from '../ui/SectionLabel';
 import { CircularTestimonials } from '../ui/CircularTestimonials';
 import { reviewsData } from '../../data/reviewsData';
 import StarRating from '../ui/StarRating';
-import { GOOGLE_MAPS_URL } from '@data/eventsData';
+import { GOOGLE_REVIEWS_URL } from '@data/eventsData';
 
 const Reviews = () => {
   return (
@@ -42,7 +42,7 @@ const Reviews = () => {
 
         <div className="mt-20 flex justify-center">
           <a
-            href={GOOGLE_MAPS_URL}
+            href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-full border border-primary/30 text-primary text-sm font-sans tracking-widest uppercase hover:bg-primary hover:text-black transition-all duration-500"
